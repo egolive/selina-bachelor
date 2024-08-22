@@ -10,3 +10,6 @@ Route::get('/', [SurveyController::class, 'trackRequest'])->middleware(BlockIpMi
 Route::get('/gewinnspiel', [RaffleController::class, 'showForm']);
 Route::post('/raffle/check', [RaffleController::class, 'checkCode'])->name('raffle.check');
 Route::get('/voucher/download/{filename}', [RaffleController::class, 'downloadVoucher'])->name('voucher.download');
+Route::get('/impressum', function () {
+    return view('impressum');
+})->name('impressum');
