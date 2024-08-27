@@ -34,7 +34,7 @@ class ImportRaffleCodes extends Command
         $winners = array_rand($codes, 4);
         $vouchers = [
             '140633113.pdf',
-            '140633113_temp_1.pdf',
+            '140633114.pdf',
             '140633113_temp_2.pdf',
             '140633113_temp_3.pdf',
         ];
