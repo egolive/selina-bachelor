@@ -35,8 +35,8 @@ class ImportRaffleCodes extends Command
         $vouchers = [
             '140633113.pdf',
             '140633114.pdf',
-            '140633113_temp_2.pdf',
-            '140633113_temp_3.pdf',
+            '345087422.pdf',
+            '684521170.pdf',
         ];
         shuffle($vouchers);
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impressum</title>
-    <link rel="stylesheet" href="{{ asset('build/assets/app-BJAB_Df7.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-D6YyM5zc.css') }}">
 </head>
 <body class="bg-gray-50 flex items-center justify-center min-h-screen">
 <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 export default {
     content: [
         "./resources/**/*.blade.php",
@@ -8,6 +10,7 @@ export default {
         extend: {
             colors: {
                 primary: 'rgb(0, 198, 178)',
+                red: colors.red,
             },
         },
     },

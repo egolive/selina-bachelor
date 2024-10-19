@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
@@ -12,12 +13,18 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 class RaffleController extends Controller
 {
     public function showForm(): View|Factory|Application {
-        return view('raffle.form');
+        $startDate = Carbon::create(2024, 12, 01);
+        $currentDate = Carbon::now();
+
+        return view('raffle.form', compact('startDate', 'currentDate'));
     }
 
     public function checkCode(Request $request): View|Factory|Application {
         $validated = $request->validate([
-            'code' => 'required|string',
+            'code' => ['required', 'string', 'regex:/^[A-Za-z]{2}(0[1-9]|1[0-2])(19[0-9]{2}|200[0-6])$/'],
+        ], [
+            'code.required' => 'Der Code ist erforderlich.',
+            'code.regex' => 'Der Code muss aus zwei Buchstaben, einem gültigen Monat und einem Jahr zwischen 1900 und 2006 bestehen.',
         ]);
 
         $participant = RaffleParticipant::where('code', $validated['code'])->first();
